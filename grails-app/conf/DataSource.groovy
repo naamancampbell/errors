@@ -20,13 +20,19 @@ environments {
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:hsqldb:mem:testDb"
+	    driverClassName = "com.mysql.jdbc.Driver"
+            url = "jdbc:mysql://localhost/errors"
+            username = "errors"
+            password = "e33ors"
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+	    driverClassName = "com.mysql.jdbc.Driver"
+            url = "jdbc:mysql://localhost/errors"
+            username = "errors"
+            password = "e33ors"
         }
     }
 }
