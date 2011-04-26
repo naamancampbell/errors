@@ -2,20 +2,20 @@ package au.id.clancampbell.errors
 
 class Error {
 
-  Category errorCat
+  Category category
   String title
   String opEnv
   String errorMsg
   String solution
-  String urls
+  String URL
 
   static constraints = {
-    errorCat(nullable: false)
     title(blank: false)
+    category()
     opEnv(blank: false)
-    errorMsg(blank: false)
-    solution(blank: false)
-    urls(blank: false)
+    errorMsg(blank: false, maxSize: 10000)
+    solution(blank: false, maxSize: 10000)
+    URL(url: true)
   }
 
 }
