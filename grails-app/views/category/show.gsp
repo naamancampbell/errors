@@ -43,6 +43,19 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="category.error.label" default="Error" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${categoryInstance.error}" var="e">
+                                    <li><g:link controller="error" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

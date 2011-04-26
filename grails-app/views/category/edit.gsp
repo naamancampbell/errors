@@ -49,6 +49,22 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="error"><g:message code="category.error.label" default="Error" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: categoryInstance, field: 'error', 'errors')}">
+                                    
+<ul>
+<g:each in="${categoryInstance?.error?}" var="e">
+    <li><g:link controller="error" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="error" action="create" params="['category.id': categoryInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'error.label', default: 'Error')])}</g:link>
+
+                                </td>
+                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>
