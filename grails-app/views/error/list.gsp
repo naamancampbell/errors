@@ -61,6 +61,5 @@
                 <g:paginate total="${errorInstanceTotal}" />
             </div>
         </div>
-      <g:render template="/footer" />
     </body>
 </html>

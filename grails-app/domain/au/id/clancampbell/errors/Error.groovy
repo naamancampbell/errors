@@ -8,6 +8,8 @@ class Error {
   String errorMsg
   String solution
   String URL
+  Date dateCreated
+  Date lastUpdated
 
   static constraints = {
     title(blank: false)
@@ -16,6 +18,8 @@ class Error {
     errorMsg(blank: false, maxSize: 10000)
     solution(blank: false, maxSize: 10000)
     URL(url: true)
+    dateCreated()
+    lastUpdated()
   }
 
 }
