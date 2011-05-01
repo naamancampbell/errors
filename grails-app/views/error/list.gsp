@@ -18,48 +18,14 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table>
-                    <thead>
-                        <tr>
-                        
-                            <g:sortableColumn property="id" title="${message(code: 'error.id.label', default: 'Id')}" />
-                        
-                            <g:sortableColumn property="title" title="${message(code: 'error.title.label', default: 'Title')}" />
-                        
-                            <th><g:message code="error.category.label" default="Category" /></th>
-                        
-                            <g:sortableColumn property="opEnv" title="${message(code: 'error.opEnv.label', default: 'Op Env')}" />
-                        
-                            <g:sortableColumn property="errorMsg" title="${message(code: 'error.errorMsg.label', default: 'Error Msg')}" />
-                        
-                            <g:sortableColumn property="solution" title="${message(code: 'error.solution.label', default: 'Solution')}" />
-                        
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <g:each in="${errorInstanceList}" status="i" var="errorInstance">
-                        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
-                            <td><g:link action="show" id="${errorInstance.id}">${fieldValue(bean: errorInstance, field: "id")}</g:link></td>
-                        
-                            <td>${fieldValue(bean: errorInstance, field: "title")}</td>
-                        
-                            <td>${fieldValue(bean: errorInstance, field: "category")}</td>
-                        
-                            <td>${fieldValue(bean: errorInstance, field: "opEnv")}</td>
-                        
-                            <td>${fieldValue(bean: errorInstance, field: "errorMsg")}</td>
-                        
-                            <td>${fieldValue(bean: errorInstance, field: "solution")}</td>
-                        
-                        </tr>
-                    </g:each>
-                    </tbody>
-                </table>
-            </div>
-            <div class="paginateButtons">
-                <g:paginate total="${errorInstanceTotal}" />
-            </div>
+              <g:each in="${errorInstanceList}" status="i" var="errorInstance">
+		<div class="error">
+                  <h2><g:link action="show" id="${errorInstance.id}">${fieldValue(bean: errorInstance, field: "title")}</g:link></h2>
+                  <p>Category: ${fieldValue(bean: errorInstance, field: "category")}</p>
+                  <span class="error-date">${fieldValue(bean: errorInstance, field: "dateCreated")}</span>
+		</div>
+	      </g:each>
+	    </div>   
         </div>
     </body>
 </html>

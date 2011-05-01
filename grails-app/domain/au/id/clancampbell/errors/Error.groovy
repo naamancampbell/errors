@@ -22,4 +22,7 @@ class Error {
     lastUpdated()
   }
 
+  static mapping = {
+    sort "dateCreated":"desc"
+  }
 }
