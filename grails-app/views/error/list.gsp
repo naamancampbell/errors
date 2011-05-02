@@ -27,5 +27,6 @@
 	      </g:each>
 	    </div>   
         </div>
+        <g:render template="/footer" />
     </body>
 </html>
