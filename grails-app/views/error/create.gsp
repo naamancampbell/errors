@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'error.label', default: 'Error')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>errors :: an intelligent KB system</title>
     </head>
     <body>
         <div class="nav">
@@ -89,6 +89,7 @@
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
                 </div>
             </g:form>
+	  <g:render template="/footer" />
         </div>
     </body>
 </html>

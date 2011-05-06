@@ -4,12 +4,12 @@
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-errors* is an attempt to improve the hapless
-Google searches of sysadmins around the world by
-helping to provide answers, not just problems.
+errors* is an attempt to improve the Google searches 
+of sysadmins by providing solutions to
+specific error messages.
 
 Created out of a frustration of endless forum
-posts that only detail other sysadmins problems
+posts that detail other people's problems
 (with no solutions), errors aims to record the
 exact error messages experienced, the causes of 
 the error message and the suggested solution.
