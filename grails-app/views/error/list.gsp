@@ -1,5 +1,5 @@
-
 <%@ page import="au.id.clancampbell.errors.Error" %>
+<%@ page import="au.id.clancampbell.errors.Category" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,15 +19,10 @@
                 <div class="panelBody">
                     <h1>Error Categories</h1>
                     <ul>
-                        <li>App version: 0.1</li>
-                        <li>Grails version: 1.3.7</li>
-                        <li>Groovy version: 1.7.8</li>
-
-                        <li>JVM version: 1.6.0_24</li>
-                        <li>Controllers: 3</li>
-                        <li>Domains: 2</li>
-                        <li>Services: 0</li>
-                        <li>Tag Libraries: 10</li>
+			<g:each in="${categoryInstanceList}" status="i" var="categoryInstance">
+                          <li><g:link action="show" id="${categoryInstance.id}">${fieldValue(bean: categoryInstance, field: "name")}</g:link></li>
+			  <li>${fieldValue(bean: categoryInstance, field: "name")}</li>
+			</g:each>
                     </ul>
                 </div>
                 <div class="panelBtm"></div>
