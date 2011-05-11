@@ -19,9 +19,8 @@
                 <div class="panelBody">
                     <h1>Error Categories</h1>
                     <ul>
-			<g:each in="${categoryInstanceList}" status="i" var="categoryInstance">
-                          <li><g:link action="show" id="${categoryInstance.id}">${fieldValue(bean: categoryInstance, field: "name")}</g:link></li>
-			  <li>${fieldValue(bean: categoryInstance, field: "name")}</li>
+			<g:each in="${au.id.clancampbell.errors.Category.list()}" status="i" var="categoryInstance">
+                          <li><g:link controller="category" action="show" id="${categoryInstance.id}">${fieldValue(bean: categoryInstance, field: "name")}</g:link></li>
 			</g:each>
                     </ul>
                 </div>
