@@ -44,7 +44,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="category.error.label" default="Error" /></td>
+                            <td valign="top" class="name">Errors</td>
                             
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>

@@ -25,4 +25,8 @@ class Error {
   static mapping = {
     sort "dateCreated":"desc"
   }
+
+  String toString() {
+    return title
+  }
 }

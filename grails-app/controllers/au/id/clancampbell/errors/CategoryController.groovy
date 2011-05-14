@@ -1,5 +1,7 @@
 package au.id.clancampbell.errors
 
+import grails.plugins.springsecurity.Secured
+
 class CategoryController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -13,12 +15,14 @@ class CategoryController {
         [categoryInstanceList: Category.list(params), categoryInstanceTotal: Category.count()]
     }
 
+    @Secured(['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'])
     def create = {
         def categoryInstance = new Category()
         categoryInstance.properties = params
         return [categoryInstance: categoryInstance]
     }
-
+   
+    @Secured(['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'])
     def save = {
         def categoryInstance = new Category(params)
         if (categoryInstance.save(flush: true)) {
@@ -41,6 +45,7 @@ class CategoryController {
         }
     }
 
+    @Secured(['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'])
     def edit = {
         def categoryInstance = Category.get(params.id)
         if (!categoryInstance) {
@@ -52,6 +57,7 @@ class CategoryController {
         }
     }
 
+    @Secured(['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'])
     def update = {
         def categoryInstance = Category.get(params.id)
         if (categoryInstance) {
@@ -79,6 +85,7 @@ class CategoryController {
         }
     }
 
+    @Secured(['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'])
     def delete = {
         def categoryInstance = Category.get(params.id)
         if (categoryInstance) {
@@ -98,3 +105,4 @@ class CategoryController {
         }
     }
 }
+
