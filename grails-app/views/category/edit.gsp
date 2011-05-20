@@ -12,7 +12,15 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <sec:ifAllGranted roles="ROLE_ADMIN">
+              <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            </sec:ifAllGranted>
+            <sec:ifLoggedIn>
+              <span class="menuButton">|&nbsp; Logged in as <b><sec:username/></b> &nbsp;|<g:link controller="logout">logout</g:link>
+            </sec:ifLoggedIn>
+            <sec:ifNotLoggedIn>
+                <g:link controller='login' action='auth'>Login</g:link>
+            </sec:ifNotLoggedIn>
         </div>
         <div class="body">
             <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
@@ -68,10 +76,12 @@
                         </tbody>
                     </table>
                 </div>
+            <sec:ifAllGranted roles="ROLE_ADMIN">
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </div>
+            </sec:ifAllGranted>
             </g:form>
         </div>
     </body>

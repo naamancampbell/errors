@@ -49,9 +49,11 @@
                         </tbody>
                     </table>
                 </div>
+            <sec:ifAllGranted roles="ROLE_ADMIN">
                 <div class="buttons">
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
                 </div>
+            </sec:ifAllGranted>
             </g:form>
         </div>
     </body>
