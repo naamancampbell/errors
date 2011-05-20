@@ -11,6 +11,12 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <sec:ifLoggedIn>
+              <span class="menuButton">|&nbsp; Logged in as <b><sec:username/></b> &nbsp;|<g:link controller="logout">logout</g:link>
+            </sec:ifLoggedIn>
+            <sec:ifNotLoggedIn>
+                <g:link controller='login' action='auth'>Login</g:link>
+            </sec:ifNotLoggedIn>
         </div>
 	<div id="catnav">
             <div class="homePagePanel">
