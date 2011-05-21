@@ -102,4 +102,12 @@ class ErrorController {
             redirect(action: "list")
         }
     }
+
+    def search = {
+      //render Error.search(params.q, params)
+      def searchResults = Error.search(params.q, params)
+      flash.message = "${searchResults.total} results found for search: ${params.q}"
+      flash.q = params.q
+      return [searchResults:searchResults.results, resultCount:searchResults.total]
+    }
 }

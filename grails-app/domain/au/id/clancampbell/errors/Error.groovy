@@ -26,6 +26,8 @@ class Error {
     sort "dateCreated":"desc"
   }
 
+  static searchable = true
+
   String toString() {
     return title
   }
