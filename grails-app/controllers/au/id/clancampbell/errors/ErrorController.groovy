@@ -23,6 +23,7 @@ class ErrorController {
 
     def save = {
         def errorInstance = new Error(params)
+	errorInstance.author = SecUser.get(session.user.id)
         if (errorInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'error.label', default: 'Error'), errorInstance.id])}"
             redirect(action: "show", id: errorInstance.id)

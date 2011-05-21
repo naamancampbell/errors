@@ -1,5 +1,3 @@
-
-
 <%@ page import="au.id.clancampbell.errors.Error" %>
 <html>
     <head>
@@ -30,6 +28,9 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
+            <sec:ifLoggedIn>
+		<input type="hidden" name="author.id" value="<sec:username/>" />
+            </sec:ifLoggedIn>
                 <div class="dialog">
                     <table>
                         <tbody>
