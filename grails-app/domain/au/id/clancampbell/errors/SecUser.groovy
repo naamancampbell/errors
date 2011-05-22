@@ -14,8 +14,6 @@ class SecUser {
 		password blank: false
 	}
 
-	static hasMany = [errors:Error]
-
 	static mapping = {
 		password column: '`password`'
 	}

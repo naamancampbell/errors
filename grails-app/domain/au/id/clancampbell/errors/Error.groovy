@@ -11,8 +11,6 @@ class Error {
   Date dateCreated
   Date lastUpdated
 
-  static belongsTo = [author:SecUser]
-
   static constraints = {
     title(blank: false)
     category()
