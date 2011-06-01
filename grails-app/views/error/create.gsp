@@ -5,6 +5,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'error.label', default: 'Error')}" />
         <title>errors :: an intelligent KB system</title>
+	<resource:richTextEditor type="advanced" />	
     </head>
     <body>
         <div class="nav">
@@ -64,7 +65,7 @@
                                     <label for="errorMsg"><g:message code="error.errorMsg.label" default="Error Msg" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: errorInstance, field: 'errorMsg', 'errors')}">
-                                    <g:textArea name="errorMsg" cols="40" rows="5" value="${errorInstance?.errorMsg}" />
+				    <richui:richTextEditor name="errorMsg" value="${errorInstance?.errorMsg}" width="525" />
                                 </td>
                             </tr>
                         

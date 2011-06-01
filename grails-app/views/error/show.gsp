@@ -59,7 +59,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="error.errorMsg.label" default="Error Msg" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: errorInstance, field: "errorMsg")}</td>
+                            <td valign="top" class="value">${errorInstance.errorMsg.decodeHTML()}</td>
                             
                         </tr>
                     
@@ -73,7 +73,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="error.URL.label" default="URL" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: errorInstance, field: "URL")}</td>
+                            <td valign="top" class="value">${errorInstance.URL.decodeURL()}</td>
                             
                         </tr>
                     
