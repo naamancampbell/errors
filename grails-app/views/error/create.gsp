@@ -11,12 +11,7 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-            <sec:ifLoggedIn>
-              <span class="menuButton">|&nbsp; Logged in as <b><sec:username/></b> &nbsp;|<g:link controller="logout">logout</g:link>
-            </sec:ifLoggedIn>
-            <sec:ifNotLoggedIn>
-                <g:link controller='login' action='auth'>Login</g:link>
-            </sec:ifNotLoggedIn>
+	    <g:render template="/layouts/commonnav" />
         </div>
         <div class="body">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
@@ -74,7 +69,7 @@
                                     <label for="solution"><g:message code="error.solution.label" default="Solution" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: errorInstance, field: 'solution', 'errors')}">
-                                    <g:textArea name="solution" cols="40" rows="5" value="${errorInstance?.solution}" />
+				    <richui:richTextEditor name="solution" value="${errorInstance?.solution}" width="525" />
                                 </td>
                             </tr>
                         

@@ -11,15 +11,7 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-	    <sec:ifAllGranted roles="ROLE_ADMIN">
-              <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
-	    </sec:ifAllGranted>
-	    <sec:ifLoggedIn>
-	      <span class="menuButton">|&nbsp; Logged in as <b><sec:username/></b> &nbsp;|<g:link controller="logout">logout</g:link>
-	    </sec:ifLoggedIn>
-	    <sec:ifNotLoggedIn>
-		<g:link controller='login' action='auth'>Login</g:link>
-	    </sec:ifNotLoggedIn>
+	    <g:render template="/layouts/commonnav" />
         </div>
         <div class="body">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
